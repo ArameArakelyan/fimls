@@ -1,6 +1,41 @@
+@font-face {
+    font-family: "SF_Compact";
+    src: url(fonts/SFCompactDisplay-Black.otf);
+}
+
+
+
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing:     border-box;
 }
 
+.back_poster{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1280px;
+    height: 950px;
+    background: linear-gradient(180.00deg, rgba(0, 0, 0, 0.37) 17.314%,rgb(17, 17, 17) 101.854%),url(images/poster1.jpg);
+    background-size: cover;
+}
+ion-icon{
+    width: 19.08px;
+    height: 19.2px;
+}
+
+.num{
+    font-family: "SF_Compact";
+}
+/* search{
+position: absolute;
+
+left: 1095px;
+top: 40px;
+color: rgba(255, 255, 255, 0.6);
+}
+play-circle{
+    width: 20px;
+    height: 20px;
+} */
