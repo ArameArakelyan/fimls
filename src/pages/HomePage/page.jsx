@@ -78,28 +78,28 @@ function Home() {
                 <div className="mt-[58px]">
                     <div className="flex justify-between">
                         <p className="text-colorWhite text-[28px] font-medium leading-8 text-center w-[183px] h-[34px] ml-10">Top Searches</p>
-                        <View />
+                        <View id={0}/>
                     </div>
                     <FilmLine films={movies} />
                 </div>
                 <div className="mt-[58px]">
                     <div className="flex justify-between">
                         <p className="text-colorWhite text-[28px] font-medium leading-8 text-center w-[183px] h-[34px] ml-10">Action</p>
-                        <View />
+                        <View id={28}/>
                     </div>
                     <FilmLine films={action} />
                 </div>
                 <div className="mt-[58px]">
                     <div className="flex justify-between">
                         <p className="text-colorWhite text-[28px] font-medium leading-8 text-left w-[300px] h-[34px] ml-10">Romance and Drama</p>
-                        <View />
+                        <View id={18}/>
                     </div>
                     <FilmLine films={drama} />
                 </div>
                 <div className="mt-[58px]">
                     <div className="flex justify-between">
                         <p className="text-colorWhite text-[28px] font-medium leading-8 text-center w-[183px] h-[34px] ml-10">Comedy</p>
-                        <View />
+                        <View id={35}/>
                     </div>
 
                     <FilmLine films={comedy} />

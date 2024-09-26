@@ -1,5 +1,6 @@
 import React from 'react'
 import { img_url } from '../../costume hooks/Fetch/useFetch'
+import Box from '../Box'
 
 const FilmLine = ({films}) => {
   return (
@@ -7,7 +8,7 @@ const FilmLine = ({films}) => {
         {films.map((el,i)=>{
             if (i>5 && i<=10) {
                 return(
-                    <img key={i} className='w-[230px]  border border-solid rounded-xl border-[#FFFFFF33]' src={img_url + el.poster_path} alt="" />
+                    <Box key={i} movie={el}/>
                 )
             }
         })}
