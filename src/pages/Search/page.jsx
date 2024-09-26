@@ -13,11 +13,13 @@ const SearchPage = () => {
   if (Object.keys(data).length !== 0) {
     movies = [...data.results]
   }
-
+ 
   return (
-    <div className="movie-cont">
+    <div className="w-full flex justify-center items-center flex-col">
       <Header />
-      <div className='grid grid-cols-5'>
+    
+      <div className='grid grid-cols-5 gap-4'>
+        
       {movies.map((movie) => {
         return (<Box key={movie.id} movie={movie} />)
       })}

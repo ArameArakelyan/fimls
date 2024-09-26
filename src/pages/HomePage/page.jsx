@@ -5,6 +5,7 @@ import useFetch, { api_key, api_url, img_url, main_url } from "../../costume hoo
 import FilmLine from "../../components/FilmLine";
 import Footer from "../../components/Footer";
 import View from "../../components/ViewButton";
+import { Link } from "react-router-dom";
 
 function Home() {
     const data = useFetch(api_url, "GET")
@@ -53,9 +54,9 @@ function Home() {
                     <div className="w-[436px] h-[57px] font-normal mt-5 text-[16px] text-colorWhite text-center">
                         <p>When a spell goes wrong, dangerous foes from other worlds start to appear, forcing Peter to discover what it truly means to be Spider-Man.</p>
                     </div>
-                    <div className=" mt-[27px]">
-                        <button className="mr-5 h-[54px] bg-[#FFFFFFE6] py-[15px] pr-[33px] pl-[65px] border-[#FFFFFF33] rounded-[40px]"><ion-icon name="play-circle"></ion-icon>Watch Now</button>
-                        <button className="bg-[#FFFFFF1A] h-[54px] py-[15px] pr-[33px] pl-[65px] border border-solid border-[#FFFFFF33] rounded-[40px] backdrop-blur-2xl text-colorWhite">More Info</button>
+                    <div className=" mt-[27px] flex">
+                    <button className="mr-5 bg-[#FFFFFFE6] pr-[33px] pl-[65px] border-[#FFFFFF33] rounded-[40px] flex justify-center items-center"><p className='text-[#262626] text-xl font-normal'>Watch Now</p></button>
+                    <Link to={`/movie/634649`}><button className='border border-solid border-[#FFFFFF33] rounded-[40px] backdrop-blur-2xl bg-[#FFFFFF1A]'><p className= 'py-[15px] px-5 text-colorWhite font-normal text-xl'>More Info</p></button></Link>
                     </div>
                     <div className="w-full mt-[57px] bg">
                         <p className="ml-[72px] font-medium text-colorWhite text-2xl leading-[34px] text-start">Latest & Trending</p>
