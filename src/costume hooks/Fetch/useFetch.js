@@ -28,13 +28,14 @@ export const main_url = "https://api.themoviedb.org/3";
 export const api_url = main_url + "/discover/movie?sort_by=popularity.desc&" + api_key;
 export const img_url = "https://image.tmdb.org/t/p/w500";
 export const searchUrl = main_url + "/search/movie?" + api_key;
+export const favurl = main_url+  '/account/1/favorite?' + api_key 
 
 function useFetch(url_fetch, method_fetch) {
     const [data, setData] = useState({})
     useEffect(()=>{
         async function fetching(url, method) {
             try {
-                const response = await fetch(url, { method });
+                const response = await fetch(url,  method );
                 const json = await response.json();
                 setData(json)
             } catch (error) {

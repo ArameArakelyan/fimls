@@ -8,7 +8,7 @@ import Box from '../../components/Box'
 const SearchPage = () => {
   const { searchtext } = useParams()
   const searchurl = main_url + "/search/movie?" + api_key + "&query=" + searchtext
-  const data = useFetch(searchurl, "GET")
+  const data = useFetch(searchurl, {metod:"GET"})
   let movies = []
   if (Object.keys(data).length !== 0) {
     movies = [...data.results]

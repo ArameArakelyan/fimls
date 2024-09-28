@@ -14,19 +14,26 @@ function Home() {
         movies = [...data.results]
     }
 
-    const data1 = useFetch(main_url + "/discover/movie?" + api_key + "&with_genres=28", "GET")
+    
+    const newData = useFetch(main_url+"/movie/now_playing?" +api_key, {metod:"GET"})
+    let topMovies = []
+    if (Object.keys(newData).length !== 0) {
+        topMovies = [...newData.results]
+    }
+    
+    const data1 = useFetch(main_url + "/discover/movie?" + api_key + "&with_genres=28", {metod:"GET"})
     let action = []
     if (Object.keys(data1).length !== 0) {
         action = [...data1.results]
     }
-
-    const data2 = useFetch(main_url + "/discover/movie?" + api_key + "&with_genres=18", "GET")
+    
+    const data2 = useFetch(main_url + "/discover/movie?" + api_key + "&with_genres=18", {metod:"GET"})
     let drama = []
     if (Object.keys(data2).length !== 0) {
         drama = [...data2.results]
     }
 
-    const data3 = useFetch(main_url + "/discover/movie?" + api_key + "&with_genres=35", "GET")
+    const data3 = useFetch(main_url + "/discover/movie?" + api_key + "&with_genres=35", {metod:"GET"})
     let comedy = []
     if (Object.keys(data3).length !== 0) {
         comedy = [...data3.results]
@@ -66,7 +73,7 @@ function Home() {
                                     return (
                                         <div className="relative num w-[250px] h-[298px] text-[#ffffffe6] text-[250px] leading-[298px] text-center" key={i}>
                                             <p>{i + 1}</p>
-                                            <img className="absolute w-[138px] h-[178px] left-[143px] top-[92px] border border-solid rounded-xl border-[#ffffffe6]" src={img_url + el.poster_path} alt="" />
+                                            <Link to={`/movie/${el.id}`}><img className="absolute w-[138px] h-[178px] left-[143px] top-[92px] border border-solid rounded-xl border-[#ffffffe6]" src={img_url + el.poster_path} alt="" /></Link>
                                         </div>
                                     )
                                 }
@@ -76,29 +83,29 @@ function Home() {
                 </div>
             </div>
             <div>
-                <div className="mt-[58px]">
-                    <div className="flex justify-between">
+                <div className="mt-[58px] w-[1280px] ">
+                    <div className="flex justify-between mb-5">
                         <p className="text-colorWhite text-[28px] font-medium leading-8 text-center w-[183px] h-[34px] ml-10">Top Searches</p>
                         <View id={0}/>
                     </div>
-                    <FilmLine films={movies} />
+                    <FilmLine films={topMovies} />
                 </div>
-                <div className="mt-[58px]">
-                    <div className="flex justify-between">
+                <div className="mt-[58px] w-[1280px] ">
+                    <div className="flex justify-between mb-5">
                         <p className="text-colorWhite text-[28px] font-medium leading-8 text-center w-[183px] h-[34px] ml-10">Action</p>
                         <View id={28}/>
                     </div>
                     <FilmLine films={action} />
                 </div>
-                <div className="mt-[58px]">
-                    <div className="flex justify-between">
+                <div className="mt-[58px] w-[1280px]">
+                    <div className="flex justify-between mb-5">
                         <p className="text-colorWhite text-[28px] font-medium leading-8 text-left w-[300px] h-[34px] ml-10">Romance and Drama</p>
                         <View id={18}/>
                     </div>
                     <FilmLine films={drama} />
                 </div>
-                <div className="mt-[58px]">
-                    <div className="flex justify-between">
+                <div className="mt-[58px] w-[1280px]">
+                    <div className="flex justify-between mb-5">
                         <p className="text-colorWhite text-[28px] font-medium leading-8 text-center w-[183px] h-[34px] ml-10">Comedy</p>
                         <View id={35}/>
                     </div>

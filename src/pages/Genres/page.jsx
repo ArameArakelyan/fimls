@@ -7,7 +7,7 @@ import Box from '../../components/Box'
 
 const Genres = () => {
   const { id } = useParams()
-  const data = useFetch(main_url + "/discover/movie?" + api_key + `&with_genres=${id}`, "GET")
+  const data = useFetch(main_url + "/discover/movie?" + api_key + `&with_genres=${id}`, {metod:"GET"})
     let movies = []
     if (Object.keys(data).length !== 0) {
         movies = [...data.results]
@@ -15,7 +15,7 @@ const Genres = () => {
   return (
     <div className='bg-bgColor_1 w-full flex justify-center items-center flex-col'>
       <Header/>
-      <div className='grid grid-cols-5'>
+      <div className='grid grid-cols-5 gap-4'>
       {movies.map((el,i)=>{
         return(
           <Box key={i} movie={el}/>

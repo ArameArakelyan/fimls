@@ -1,18 +1,31 @@
 import React from 'react'
 import { img_url } from '../../costume hooks/Fetch/useFetch'
 import Box from '../Box'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+
 
 const FilmLine = ({films}) => {
   return (
-    <div className='flex mt-5 ml-5 gap-4'>
-        {films.map((el,i)=>{
-            if (i>5 && i<=10) {
-                return(
-                    <Box key={i} movie={el}/>
+    
+        <Swiper
+            spaceBetween={0}
+            slidesPerView={5.1}
+          // onSlideChange={() => console.log('slide change')}
+          // onSwiper={(swiper) => console.log(swiper)}
+          >
+
+            {films.map((el, i) => {
+              if (i<10) {
+                return (
+                  <SwiperSlide key={i}>
+                    <Box movie={el}/>
+                  </SwiperSlide>
                 )
-            }
-        })}
-    </div>
+              }
+            })}
+          </Swiper>
+   // </div>
   )
 }
 

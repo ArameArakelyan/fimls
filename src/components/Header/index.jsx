@@ -27,7 +27,7 @@ function Header() {
                     <Link to={`/`} className=" text-center">Home</Link>
                     <li className=" text-center">Movies</li>
                     <li className=" text-center">Series</li>
-                    <li className=" text-center">Trending</li>
+                    <Link to={`/favorites`}> <li className=" text-center">Favorites</li></Link>
                     <li className=" text-center">Categories</li>
                 </ul>
             </nav>
